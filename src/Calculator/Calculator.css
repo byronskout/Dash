@@ -1,0 +1,153 @@
+:root {
+  --black: #000f08;
+  --blue: #136f63;
+  --gold: #e0ca3c;
+  --red: #f34213;
+  --purple: #3e2f5b;
+  --white: #ffffff
+}
+
+.calculator {
+  display: grid;
+  grid-template:
+    "discontainter discontainter discontainter discontainter" 2fr
+    "num num num num" 4fr
+    / 1fr 1fr 1fr 1fr;
+
+  background-color: var(--blue);
+  width: 280px;
+  height: 390px;
+}
+
+.display-container {
+  grid-area: discontainter;
+  display: grid;
+  grid-template:
+    "input input input input" 1.25fr
+    "display display display clear" 1fr
+    /1fr 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+.input-display {
+  grid-area: input;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: var(--white);
+}
+.input-display p {
+  width: 100%;
+  word-wrap: break-word;
+  font-family: "Exo", sans-serif;
+}
+
+.display {
+  grid-area: display;
+  padding: 15px;
+  text-align: right;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #8c8c8c;
+  font-size: 32px;
+  font-family: "Exo", sans-serif;
+}
+.number-pad {
+  grid-area: num;
+  display: grid;
+  grid-template:
+    "seven eight nine add" 1fr
+    "four five six subt" 1fr
+    "one two three mult" 1fr
+    "zero dec equ div" 1fr
+    /1fr 1fr 1fr 1fr;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#zero {
+  grid-area: zero;
+}
+#add {
+  grid-area: add;
+}
+#subtract {
+  grid-area: subt;
+}
+#multiply {
+  grid-area: mult;
+}
+#divide {
+  grid-area: div;
+}
+#decimal {
+  grid-area: dec;
+}
+#equals {
+  grid-area: equ;
+}
+#clear {
+  grid-area: clear;
+  background-color: var(--red);
+}
+
+.calc-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8c8c8c;
+  border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+  font-size: 24px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bold;
+  color: var(--black);
+}
+.calc-button:hover {
+  cursor: pointer;
+}
+
+/*-------Fade animation for when solar panel is being hovered over -------*/
+
+@keyframes solar-fade {
+  0% {
+    color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
+.faded {
+  animation-name: solar-fade;
+  animation-duration: 2s;
+  color: rgba(0, 0, 0, 0);
+}

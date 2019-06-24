@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class NewsWidget extends _react.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			articles: [],
+			sources: [],
+			currentPage: 1,
+			maxPages: 1,
+			selectedSource: '' };
+
+	}
+
+	handleShowMore() {
+		if (this.state.currentPage < this.state.maxPages) {
+			this.setState(prevState => ({
+				currentPage: prevState.currentPage + 1 }),
+			() => this.getNews());
+		}
+	}
+
+	handleChangeSource(selectedOption) {
+		this.setState({ currentPage: 1, selectedSource: selectedOption == null ? '' : selectedOption.value, articles: [] }, () => this.getNews());
+	}
+
+	getNews() {
+		let newsUrl;
+		if (this.state.selectedSource === '') {
+			newsUrl = \`https://newsapi.org/v2/top-headlines?country=gb&pageSize=5&page=\${this.state.currentPage}&apiKey=17fcb50c25f244a59d6a87fda4730bef\`;
+		} else {
+			newsUrl = \`https://newsapi.org/v2/top-headlines?pageSize=5&page=\${this.state.currentPage}&sources=\${this.state.selectedSource}&apiKey=17fcb50c25f244a59d6a87fda4730bef\`;
+		}
+		_axios2.default.get(newsUrl).
+		then(res => {
+			for (let article of res.data.articles) {
+				this.setState(prevState => ({
+					articles: [...prevState.articles, article] }));
+
+			}
+			this.setState({ maxPages: Math.ceil(res.data.totalResults / 5) });
+		}).
+		catch(err => console.log(err));
+	}
+
+	getSources() {
+		_axios2.default.get(\`https://newsapi.org/v2/sources?country=gb&apiKey=17fcb50c25f244a59d6a87fda4730bef\`).
+		then(res => this.setState({ sources: res.data.sources })).
+		catch(err => console.log(err));
+	}
+
+	componentWillMount() {
+		this.getNews();
+		this.getSources();
+	}
+
+	render() {
+		let articles;
+		let sources;
+
+		if (this.state.articles) {
+			articles = this.state.articles.map(article => {
+				return (
+					_react2.default.createElement(_NewsItem2.default, { key: article.title, article: article, __source: { fileName: _jsxFileName, lineNumber: 72 }, __self: this }));
+
+			});
+		}
+
+		if (this.state.sources) {
+			sources = this.state.sources.map(source => {
+				return {
+					value: source.id,
+					label: source.name };
+
+			});
+		}
+
+		return (
+			_react2.default.createElement('div', { className: 'newsFeed', __source: { fileName: _jsxFileName, lineNumber: 87 }, __self: this },
+				_react2.default.createElement('div', { className: 'newsFeed__heading d-flex flex-row align-items-center justify-content-between', __source: { fileName: _jsxFileName, lineNumber: 88 }, __self: this },
+					_react2.default.createElement('h3', { className: 'newsFeed__title', __source: { fileName: _jsxFileName, lineNumber: 89 }, __self: this }, 'News'),
+					_react2.default.createElement(_reactSelect2.default, {
+						className: 'newsFeed__sources',
+						placeholder: 'Filter By Source',
+						value: this.state.selectedSource,
+						options: sources.length > 0 ? sources : null,
+						onChange: this.handleChangeSource.bind(this), __source: { fileName: _jsxFileName, lineNumber: 90 }, __self: this })),
+
+
+				articles.length > 0 ?
+				_react2.default.createElement('ul', { className: 'newsFeed__list', __source: { fileName: _jsxFileName, lineNumber: 99 }, __self: this },
+					_react2.default.createElement(_reactAddonsCssTransitionGroup2.default, {
+							transitionName: 'newsItemsTransition',
+							transitionEnterTimeout: 500,
+							transitionLeaveTimeout: 300, __source: { fileName: _jsxFileName, lineNumber: 100 }, __self: this },
+						articles)) :
+
+
+
+				_react2.default.createElement('p', { className: 'newsFeed__empty', __source: { fileName: _jsxFileName, lineNumber: 108 }, __self: this }, 'No news articles were found.'),
+
+				_react2.default.createElement('button', {
+						className: 'newsFeed__more btn btn-primary',
+						onClick: this.handleShowMore.bind(this), __source: { fileName: _jsxFileName, lineNumber: 110 }, __self: this },
+					this.state.currentPage === this.state.maxPages ? 'No More News' : 'Show More'),
+				_react2.default.createElement('p', { className: 'newsFeed__sponsor', __source: { fileName: _jsxFileName, lineNumber: 114 }, __self: this }, 'Powered by ', _react2.default.createElement('a', { href: 'https://newsapi.org/', target: '_blank', rel: 'noopener noreferrer', __source: { fileName: _jsxFileName, lineNumber: 114 }, __self: this }, 'News API'), '.')));
+
+
+	}} should render the component correctly and match snapshot 1`] = `
+<div
+  className="newsFeed"
+>
+  <div
+    className="newsFeed__heading d-flex flex-row align-items-center justify-content-between"
+  >
+    <h3
+      className="newsFeed__title"
+    >
+      News
+    </h3>
+    <div
+      className="Select newsFeed__sources is-clearable is-searchable Select--single"
+      style={undefined}
+    >
+      <div
+        className="Select-control"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={undefined}
+      >
+        <span
+          className="Select-multi-value-wrapper"
+          id="react-select-2--value"
+        >
+          <div
+            className="Select-placeholder"
+          >
+            Filter By Source
+          </div>
+          <div
+            className="Select-input"
+            style={
+              Object {
+                "display": "inline-block",
+              }
+            }
+          >
+            <input
+              aria-activedescendant="react-select-2--value"
+              aria-describedby={undefined}
+              aria-expanded="false"
+              aria-haspopup="false"
+              aria-label={undefined}
+              aria-labelledby={undefined}
+              aria-owns=""
+              className={undefined}
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={false}
+              role="combobox"
+              style={
+                Object {
+                  "boxSizing": "content-box",
+                  "width": "5px",
+                }
+              }
+              tabIndex={undefined}
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "scroll",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              
+            </div>
+          </div>
+        </span>
+        <span
+          className="Select-arrow-zone"
+          onMouseDown={[Function]}
+        >
+          <span
+            className="Select-arrow"
+            onMouseDown={[Function]}
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+  <p
+    className="newsFeed__empty"
+  >
+    No news articles were found.
+  </p>
+  <button
+    className="newsFeed__more btn btn-primary"
+    onClick={[Function]}
+  >
+    No More News
+  </button>
+  <p
+    className="newsFeed__sponsor"
+  >
+    Powered by 
+    <a
+      href="https://newsapi.org/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      News API
+    </a>
+    .
+  </p>
+</div>
+`;

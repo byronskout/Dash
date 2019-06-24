@@ -1,0 +1,111 @@
+@import '~react-grid-layout/css/styles.css';
+@import '~react-resizable/css/styles.css';
+@import '~react-open-weather/lib/css/ReactWeather.css';
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  /* background: #F0C27B;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  #line {
+  height: 0px;
+  background-color: #717171;
+  border-bottom:1px solid #313030;
+  }
+
+
+  list-group-item {
+    display: none;
+  }
+
+  .gr__localhost {
+    /* background-color: #282c34; */
+
+  }
+
+  #game-button {
+    width: 150px;
+    padding: 20px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #bbb;
+    font-size: 1.3em;
+    color: white;
+  }
+
+  #reset-button {
+    display: none;
+  }
+
+  #logout-button {
+    width: 60px;
+    margin-bottom: 2px;
+    border: none;
+    border-radius: 6px;
+    background-color: #bbb;
+    font-size: 0.43em;
+    color: white;
+  }
+
+  #titl {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF;
+    color: #FFFFFF;
+    font-size: 65px;
+  }
+
+  #piano-play {
+
+  }
+
+  #audio__player.audio__player {
+    width: 63.8%;
+    left: 39.5px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  .Player__load-btn {
+    margin-bottom: 25px;
+  }
+
+  #playpic {
+    padding-right: 17px;
+  }

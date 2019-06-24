@@ -1,0 +1,12 @@
+
+const playlist = [
+  {
+    url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wwy.mp3',
+    cover: 'path/to/jpg',
+    title: 'Despacito',
+    artist: [
+      'Luis Fonsi',
+      'Byron'
+    ]
+  }
+]
