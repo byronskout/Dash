@@ -27,7 +27,7 @@ const originalLayout = getFromLS("layout") || [];
 export default class LocalStorageLayout extends React.PureComponent {
   static defaultProps = {
     className: "layout",
-    cols: 6,
+    cols: 8,
     onLayoutChange: function() {}
   };
 
@@ -96,7 +96,7 @@ export default class LocalStorageLayout extends React.PureComponent {
           <span className="text"><Memorizr/></span>
           </div>
           <div key="11" data-grid={{ w: 2, h: 4, x: 11, y: 0 }}>
-          <span className="text"></span>
+          <span className="text"><Youtube/></span>
           </div>
           <div key="12" data-grid={{ w: 2, h: 3, x: 0, y: 0 }}>
           <span className="text"><CountDown/></span>

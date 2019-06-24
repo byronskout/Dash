@@ -6,7 +6,6 @@ import Scrollbar from 'react-scrollbars-custom';
 
 import NewsItem from '../NewsItem';
 
-import 'react-select/dist/react-select.css';
 import './NewsWidget.css';
 
 class NewsWidget extends Component {
