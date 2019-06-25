@@ -1,23 +1,22 @@
 
 
+const headers = {
+  "Content-Type": "application/json",
+   Accepts: "application/json"
+};
+
 const login = (username, password) => {
-   fetch('https://dash-backendd.herokuapp.com/auth/create', {
+  return fetch('https://dash-backendd.herokuapp.com/auth/create', {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-       Accepts: "application/json"
-    },
+    headers: headers,
     body: JSON.stringify({ username, password })
   }).then(res => res.json());
 };
 
 const signup = (username, password) => {
-   fetch('https://dash-backendd.herokuapp.com/users', {
+  return fetch('https://dash-backendd.herokuapp.com/users', {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-       Accepts: "application/json"
-    },
+    headers: headers,
     body: JSON.stringify({
       username,
       password
@@ -26,7 +25,7 @@ const signup = (username, password) => {
 };
 
 const getCurrentUser = token => {
-   fetch('https://dash-backendd.herokuapp.com/auth/show', {
+  return fetch('https://dash-backendd.herokuapp.com/auth/show', {
     headers: { ...headers, Authorization: token }
   }).then(res => res.json());
 };
