@@ -1,4 +1,4 @@
-const API_BASE_URL = `http://localhost:3000`;
+
 
 const headers = {
   "Content-Type": "application/json",
@@ -6,7 +6,7 @@ const headers = {
 };
 
 const login = (username, password) => {
-  return fetch(`${API_BASE_URL}/auth/create`, {
+  return fetch('https://dash-backendd.herokuapp.com/auth/create', {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ username, password })
@@ -14,7 +14,7 @@ const login = (username, password) => {
 };
 
 const signup = (username, password) => {
-  return fetch(`${API_BASE_URL}/users`, {
+  return fetch('https://dash-backendd.herokuapp.com/users', {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -25,7 +25,7 @@ const signup = (username, password) => {
 };
 
 const getCurrentUser = token => {
-  return fetch(`${API_BASE_URL}/auth/show`, {
+  return fetch('https://dash-backendd.herokuapp.com/auth/show', {
     headers: { ...headers, Authorization: token }
   }).then(res => res.json());
 };
