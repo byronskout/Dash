@@ -30,7 +30,6 @@ const getCurrentUser = token => {
   }).then(res => res.json());
 };
 
-
 export default {
   login,
   getCurrentUser,
