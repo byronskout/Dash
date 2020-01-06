@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "analyser-frequency-average": "^1.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cannon": "^0.6.2",
     "canvas-loop": "^1.0.7",
     "detect-audio-autoplay": "^1.1.1",
