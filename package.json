@@ -58,7 +58,7 @@
     "soundfont-player": "^0.11.0",
     "styled-components": "^4.2.0",
     "tap-event": "^1.0.0",
-    "three": "^0.104.0",
+    "three": "^0.137.0",
     "tinytime": "^0.2.6",
     "use-abortable-fetch": "^2.6.3",
     "web-audio-analyser": "^2.0.1",
